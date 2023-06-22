@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Abertura from './screens/Abertura';
 import Login from './screens/Login';
 import Registro from './screens/Registro';
+import { Header } from 'semantic-ui-react';
 
 export default function App() {
   return (
