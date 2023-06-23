@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, FlatList, Text, View } from 'react-native'
+import { Button, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import { StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 
 export default function Abertura({ navigation }) {
 
@@ -23,7 +24,10 @@ export default function Abertura({ navigation }) {
                 <View>
                     <FlatList
                         data={nameButtons}
-                        renderItem={({ item }) => <View style={{flex: 1, flexDirection: "row"}}><Text>{item.title}</Text></View>}
+                        renderItem={({ item }) => 
+                        <View style={{ flex: 1, flexDirection: "row" }}>
+                            <TouchableOpacity style={styles.estilizacaoButton} onPress={()=>{navigation.navigate("Login")}}><Text style={{textAlign:"center"}}>{item.title}</Text></TouchableOpacity>
+                            </View>}
                         keyExtractor={(item => item.id)}
                     />
                 </View>
@@ -48,18 +52,24 @@ const styles = StyleSheet.create({
 
     },
     header: {
-        backgroundColor: "red",
+        backgroundColor: "white",
         flex: 1,
         flexDirection: "row",
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         paddingHorizontal: 30,
     },
     main: {
-        backgroundColor: "green",
+        backgroundColor: "white",
         flex: 7,
     },
     footer: {
-        backgroundColor: "purple",
+        backgroundColor: "white",
         flex: 1,
     },
+    estilizacaoButton:{
+        backgroundColor: "#bbe6f4",
+        borderRadius: 6,
+        width: 70,
+    
+    }
 });

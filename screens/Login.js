@@ -6,7 +6,7 @@ export default function Login({navigation}) {
   return (
     <View>
       <Text>Login</Text>
-      <Button title='Login'onPress={()=>{
+      <Button title='Voltar'onPress={()=>{
             navigation.navigate("Abertura")
         }}></Button>
     </View>
